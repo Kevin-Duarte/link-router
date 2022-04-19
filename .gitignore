@@ -1,0 +1,6 @@
+environment.env
+.vscode
+__pycache__
+*.db
+*.db.old
+todo.txt

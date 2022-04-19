@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Link Router - In Code We Speak</title>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-title">
+                <h1>Link Router</h1>
+            </div>
+            <div id="header-login">
+                <button class="signup-button" id="header-signup-button" style="display: none;" onclick="openGenericForm('signup')">Sign Up</button>
+                <button class="login-button" id="header-login-button" style="display: none;" onclick="openGenericForm('login')">Login</button>
+                <button class="logout-button" id="header-logout-button" style="display: none;" onclick="do_logout()">Logout</button>
+            </div>
+            <div id="header-caption" class="header-caption">by: In Code We Speak</div>
+            <div id="header-summary" class="header-summary">An interesting tag-line should be here, but it's just a simple link router. Have a good day.</div>
+        </div>
+
+
+        <div id="header-separator"></div> 
+
+        <div id="content">
+            <!-- NAV BAR -->
+            <div id="nav" style="display: none;">
+                <h3>Menu</h3>
+                <ul>
+                    <li><a class="selected" href="" id="menu-newlink" onclick="menu_select('menu-newlink'); updatecontent_newlink();">New Link</a></li>
+                    <li><a href="" id="menu-account" onclick="menu_select('menu-account'); updatecontent_account();">Account</a></li>
+                    <li><a href="" id="menu-mylinks" onclick="menu_select('menu-mylinks'); updatecontent_mylinks();">My Links</a></li>
+                    <li><a href="" id="menu-users" onclick="menu_select('menu-users'); updatecontent_users();" style="display: none;">Users</a></li>
+                    <li><a href="" id="menu-alllinks" onclick="menu_select('menu-alllinks'); updatecontent_alllinks();" style="display: none;">All Links</a></li>
+                    <li><a href="" id="menu-banned" onclick="menu_select('menu-banned'); updatecontent_banned();" style="display: none;">Banned</a></li>
+                    <li><a href="" id="menu-events" onclick="menu_select('menu-events'); updatecontent_events();" style="display: none;">Events</a></li>
+                    
+                </ul>
+            </div>
+            <!-- NAV BAR END-->
+
+            <!-- MAIN CONTENT-->
+            <div id="main" style="float: left;">
+                <div id="main-title"><h2>Create a New Link</h2></div>
+
+                <form action='/' method='POST' id='add-form'>
+                    <label for='key' id='hostname_label'></label>
+                    <input type='text' id='key' name='key'><br> <br>
+                    <label for='url'><b>They get sent to: </b></label>
+                    <select id='protocol' name='protocol'>
+                        <option value='https://'>https://</option>
+                        <option value='http://'>http://</option>
+                    </select>
+                    <input type='text' id='url' name='url'><br><br>
+                    <div id="link-submission-tip"></div>
+                    <input type='submit' onclick='addLinkAction()' class="button-style" value='Submit'>
+                    <br>
+
+                </form>
+
+
+                <div class="generic-form-popup" id="generic-form-div">
+                    <div class="generic-form-popup-content">
+                        <form id="generic-form">
+                            
+                            <button type="button" class="generic-form-close-button" onclick="closeGenericForm()">X</button>
+                            <label id="generic-form-label" class="generic-form-header"><b>Header Label </b></label><br>
+                            <br><br>
+
+                            <div id="generic-form-error-div" class="generic-form-labels" style="display: none;"></div>
+
+                            <div id="generic-form-email-div" class="generic-form-labels" style="display: none;">
+                            <label for="email"><b>Email</b></label><br>
+                            <input type="text"  class="generic-form-fields" name="email" required>
+                            <br><br>
+                            </div>
+
+                             
+
+                            <div id="generic-form-password-div" class="generic-form-labels" style="display: none;">
+                            <label for="password"><b>Password</b></label><br>
+                            <input type="password" class="generic-form-fields" name="password" required>
+                            <br><br>
+                            </div>
+
+                            <div id="generic-form-firstname-div" class="generic-form-labels" style="display: none;">
+                            <label for="firstname"><b>First Name</b></label><br>
+                            <input type="text"  class="generic-form-fields" name="firstname" required>
+                            <br><br>
+                            </div>
+
+                            <div id="generic-form-lastname-div" class="generic-form-labels" style="display: none;">
+                            <label for="lastname"><b>Last Name</b></label><br>
+                            <input type="text"  class="generic-form-fields" name="lastname" required>
+                            <br><br>
+                            </div>
+
+                            <div id="generic-form-remember-div" class="generic-form-labels" style="display: none;">
+                            <label for="remember"><b>Remember</b></label>
+                            <input type="checkbox" name="remember" id="remember" value="1">
+                            <br><br>
+                            </div>
+                            
+                            <div class="generic-form-loading-wheel" id="generic-form-loading-wheel-div"></div>
+                            <button type="submit" id="generic-form-action-button" class="generic-form-action-button">Error</button>
+                            <div id="generic-form-hint-div" style="display: none; text-align: center;"> 
+                            <p><a href='/' onclick="openGenericForm('signup')">here</a></p>
+                            </div>
+                                
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- MAIN CONTENT END -->
+
+        </div>
+        <div id="footer">
+            Copyright &copy; 2022 In Code We Speak
+        </div>
+
+    </div>
+</body>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script> 
+
+<script type="text/javascript" src="static/js/index.js"></script>
+
+
+</html>

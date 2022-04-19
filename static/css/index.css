@@ -1,0 +1,263 @@
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url('fonts/IBMPlexSans-Regular.ttf') format("truetype");
+}
+
+
+
+body{
+    background-color: white;
+    font-family: "IBM Plex Sans", consolas, Arial, sans-serif;
+    
+
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+
+#container {
+    background-color: transparent;
+    width: 80%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#header {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+    overflow: hidden;
+    /* float: left;*/
+    border: 2px;
+    border-color: blue;
+    font-size: 24px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#header-title {
+    float: left;
+    background-color: transparent;
+    color: black;
+
+}
+#header-login {
+    float: right;
+
+}
+
+#header-summary {
+    font-size: 16px;
+    color: black;
+    text-align: left;
+    font-weight: lighter;
+}
+
+#header2 {
+    background-color: #66CCFF;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    float: right;
+}
+
+
+
+.header-caption {
+    background-color: transparent;
+    color: black;
+    text-align: left;
+    padding: 0px 0px 10px 0px;
+    clear: both;
+    /* float: left;*/
+    border-color: blue;
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+
+#header-separator {
+    background-color: black;
+    height: 30px;
+}
+
+
+
+#header button {
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 1000px;
+ }
+
+ .button-style {
+     background-color: black;
+     color: white;
+     border-radius: 1000px;
+     padding: 10px;
+     font-size: 14px;
+     margin: 10px;
+     border: none;
+}
+
+.button-style:hover {
+    background-color: #007acc;
+    cursor: pointer;
+}
+
+#header button:hover {
+    background-color: #007acc;
+    cursor: pointer;
+}
+ 
+
+  /* generic form popup  */
+  .generic-form-popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-image: linear-gradient(to left, blue, purple);
+    padding-top: 60px;
+
+  }
+
+/* Generic form content  */
+.generic-form-popup-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    padding: 15px;
+    width: 30%; /* Could be more or less, depending on screen size */
+    font-size: 16px;
+    max-width: 400px;
+    min-width: 300px;
+  }
+
+
+  .generic-form-loading-wheel {
+    border: 2px solid lightgray; /* Light grey */
+    border-top: 2px solid purple; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    display: inline-block;
+    margin: 0 auto;
+
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.generic-form-labels {
+    font-size: 18px;
+
+}
+.generic-form-fields {
+    font-size: 15px;
+    width: 95%;
+}
+
+/* generic form close button */
+.generic-form-close-button {
+    float: right;
+    float: top;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+}
+
+/* generic form action button */
+.generic-form-action-button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 1000px;
+    background-color: black;
+
+    color: white;
+}
+
+.generic-form-action-button:hover {
+    background-image: none;
+    background-color: #007acc;
+    cursor: pointer;
+}
+
+.generic-form-header {
+    text-align: center;
+    align-content: center;
+    font-size: 25px;
+}
+
+
+
+#content {
+    padding: 10px 20px 200px 20px;
+    background-color: white;
+    clear: both;
+}
+
+#nav {
+    width: 20%;
+    float: left;
+}
+
+#nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.selected {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#main {
+    width: 80%;
+    float: right;
+}
+
+#main-title {
+    padding: 0px 0px 20px 0px;
+}
+
+#link-submission-tip {
+    background-color: #ffff80;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+#footer {
+    clear: both;
+    padding: 10px;
+    
+    background-color: black;
+    color: white;
+    text-align: left;
+}
