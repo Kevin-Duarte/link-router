@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web:
+    container_name: linkrouter-webapp
+    build: .
+    command: ["/start.sh"]
+    ports:
+      - '5005:80'
