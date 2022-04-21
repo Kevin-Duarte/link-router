@@ -13,7 +13,7 @@ class databaseHandler:
         # database file location
         self.databaseLocation = DATABASE_LOCATION
         self.databaseFilename = DATABASE_FILENAME
-        self.databaseFile = DATABASE_LOCATION + DATABASE_LOCATION
+        self.databaseFile = DATABASE_LOCATION + DATABASE_FILENAME
 
         if not os.path.exists(self.databaseLocation):
             os.makedirs(self.databaseLocation)
