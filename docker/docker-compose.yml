@@ -4,6 +4,8 @@ services:
     container_name: linkrouter-webapp
     build: .
     command: ["/start.sh"]
+    volumes:
+      - ./database:./link-router/database.db
     ports:
       - '5005:80'
     environment:
@@ -16,3 +18,4 @@ services:
       - BAN_FAIL_AUTH=20
       - DEFAULT_ADMIN_EMAIL=''
       - DEFAULT_ADMIN_PASSWORD=''
+      - DATABASE_LOCATION='link-router/database.db'

@@ -35,8 +35,9 @@ blacklist_keys = ['password', 'admin', 'user', 'anon', 'reset', 'sign', 'log', '
 BAN_FAIL_AUTH = os.environ['BAN_FAIL_AUTH']
 DEFAULT_ADMIN_EMAIL = os.environ['DEFAULT_ADMIN_EMAIL']
 DEFAULT_ADMIN_PASSWORD = os.environ['DEFAULT_ADMIN_PASSWORD']
+DATABASE_LOCATION = os.environ['DATABASE_LOCATION']
 
-database = databaseHandler(DEFAULT_ADMIN_EMAIL, DEFAULT_ADMIN_PASSWORD)
+database = databaseHandler(DATABASE_LOCATION, DEFAULT_ADMIN_EMAIL, DEFAULT_ADMIN_PASSWORD)
 HOST_BASE = os.environ['HOST_BASE']
 smtp = smtpHandler(
     SERVER=os.environ['SMTP_SERVER'],
