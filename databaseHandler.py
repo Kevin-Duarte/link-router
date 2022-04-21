@@ -9,9 +9,14 @@ import os
 import sys
 
 class databaseHandler:
-    def __init__(self, DATABASE_LOCATION, DEFAULT_USERNAME, DEFAULT_PASSWORD):
+    def __init__(self, DATABASE_LOCATION, DATABASE_FILENAME, DEFAULT_USERNAME, DEFAULT_PASSWORD):
         # database file location
-        self.databaseFile = DATABASE_LOCATION
+        self.databaseLocation = DATABASE_LOCATION
+        self.databaseFilename = DATABASE_FILENAME
+        self.databaseFile = DATABASE_LOCATION + DATABASE_LOCATION
+
+        if not os.path.exists(self.databaseLocation):
+            os.makedirs(self.databaseLocation)
 
         # create db if not exists
         conn = sqlite3.connect(self.databaseFile)
