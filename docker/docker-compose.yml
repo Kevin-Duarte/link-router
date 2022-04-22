@@ -5,18 +5,18 @@ services:
     build: .
     command: ["/start.sh"]
     volumes:
-      - ./database:/database/
+      - ./database:/database
     ports:
       - '5005:80'
     environment:
-      - SECRET_KEY="RANDOM_AND_LONG_KEY_HERE"
-      - HOST_BASE=''
-      - SMTP_SERVER=''
-      - SMTP_USERNAME=''
-      - SMTP_PASSWORD=''
-      - SMTP_BCC_COPY=''
+      - SECRET_KEY=RANDOM_AND_LONG_KEY_HERE
+      - HOST_BASE=
+      - SMTP_SERVER=
+      - SMTP_USERNAME=
+      - SMTP_PASSWORD=
+      - SMTP_BCC_COPY=
       - BAN_FAIL_AUTH=20
-      - DEFAULT_ADMIN_EMAIL=''
-      - DEFAULT_ADMIN_PASSWORD=''
-      - DATABASE_LOCATION=/database/
-      - DATABASE_FILENAME=/database.db
+      - DEFAULT_ADMIN_EMAIL=
+      - DEFAULT_ADMIN_PASSWORD=
+      - DATABASE_LOCATION=/database
+      - DATABASE_FILENAME=database.db
