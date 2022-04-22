@@ -37,6 +37,7 @@ DEFAULT_ADMIN_EMAIL = os.environ['DEFAULT_ADMIN_EMAIL']
 DEFAULT_ADMIN_PASSWORD = os.environ['DEFAULT_ADMIN_PASSWORD']
 DATABASE_LOCATION = os.environ['DATABASE_LOCATION']
 DATABASE_FILENAME = os.environ['DATABASE_FILENAME']
+IP_HTTP_HEADER = os.environ['IP_HTTP_HEADER']
 
 database = databaseHandler(DATABASE_LOCATION, DATABASE_FILENAME, DEFAULT_ADMIN_EMAIL, DEFAULT_ADMIN_PASSWORD)
 HOST_BASE = os.environ['HOST_BASE']
@@ -118,6 +119,8 @@ def validateAndSetPassword(userId, newPassword):
 
 # Choke point for getting ip address
 def getIPAddr():
+    if IP_HTTP_HEADER == 'CF-CONNECTING-IP':
+        return request.environ.get('cf-connecting-ip', request.remote_addr)
     return request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 
 
