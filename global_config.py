@@ -118,10 +118,10 @@ def validateAndSetPassword(userId, newPassword):
     database.setUserPassword(userId, newPassword)
 
 # Choke point for getting ip address
+# Common options: cf-connecting-ip, HTTP_X_REAL_IP
 def getIPAddr():
-    if IP_HTTP_HEADER == 'CF-CONNECTING-IP':
-        return request.environ.get('cf-connecting-ip', request.remote_addr)
-    return request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    return request.environ.get(IP_HTTP_HEADER, request.remote_addr)
+
 
 
 # Before request settings

@@ -20,3 +20,4 @@ services:
       - DEFAULT_ADMIN_PASSWORD=
       - DATABASE_LOCATION=/database
       - DATABASE_FILENAME=database.db
+      - IP_HTTP_HEADER=CF-CONNECTING-IP
