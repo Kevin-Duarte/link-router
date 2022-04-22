@@ -112,7 +112,7 @@ def validateAndAddLink(key, link, createdBy, expiration):
 
 # Choke point for setting passwords
 def validateAndSetPassword(userId, newPassword):
-    if not re.fullmatch(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$', newPassword):
+    if not re.fullmatch(r'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,40}$', newPassword):
         raise Exception("Password complexity not met")
     database.setUserPassword(userId, newPassword)
 
