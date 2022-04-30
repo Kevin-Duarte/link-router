@@ -123,8 +123,8 @@ def getIPAddr():
     returnIPs = []
     returnIPs.append(request.headers.get(IP_HTTP_HEADER))
     if len(returnIPs) <= 0:
-        return request.request.remote_addr
-    return returnIPs
+        return request.remote_addr
+    return ','.join(returnIPs)
 
 
 # Before request settings
