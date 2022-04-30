@@ -20,4 +20,5 @@ services:
       - DEFAULT_ADMIN_PASSWORD=
       - DATABASE_LOCATION=/database
       - DATABASE_FILENAME=database.db
-      - IP_HTTP_HEADER=CF-CONNECTING-IP
+      - IP_HTTP_HEADER=HTTP_X_FORWARDED_FOR
+      - TZ=America/Los_Angeles
