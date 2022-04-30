@@ -120,8 +120,11 @@ def validateAndSetPassword(userId, newPassword):
 # Choke point for getting ip address
 # Common options: cf-connecting-ip, HTTP_X_REAL_IP
 def getIPAddr():
-    return request.environ.get(IP_HTTP_HEADER, request.remote_addr)
-
+    returnIPs = []
+    returnIPs.append(request.headers.get(IP_HTTP_HEADER))
+    if len(returnIPs) <= 0:
+        return request.request.remote_addr
+    return returnIPs
 
 
 # Before request settings
