@@ -5,20 +5,22 @@ services:
     build: .
     command: ["/start.sh"]
     volumes:
-      - ./database:/database
+      - ./linkrouter_data:/link-router-files
     ports:
       - '5005:80'
     environment:
-      - SECRET_KEY=RANDOM_AND_LONG_KEY_HERE
-      - HOST_BASE=
-      - SMTP_SERVER=
-      - SMTP_USERNAME=
-      - SMTP_PASSWORD=
-      - SMTP_BCC_COPY=
+      - SECRET_KEY="RANDOM_AND_LONG_KEY_HERE"
+      - HOST_BASE=www.link-router.com
+      - SMTP_SERVER=www.server.com
+      - SMTP_USERNAME=myusername
+      - SMTP_PASSWORD=mypassword
+      - SMTP_BCC_COPY=admin@email.com
       - BAN_FAIL_AUTH=20
-      - DEFAULT_ADMIN_EMAIL=
-      - DEFAULT_ADMIN_PASSWORD=
-      - DATABASE_LOCATION=/database
+      - DEFAULT_ADMIN_EMAIL=admin@email.com
+      - DEFAULT_ADMIN_PASSWORD=password
+      - DATABASE_LOCATION=/link-router-files/database
       - DATABASE_FILENAME=database.db
-      - IP_HTTP_HEADER=HTTP_X_FORWARDED_FOR
+      - IP_HTTP_HEADER=CF-Connecting-IP
+      - LD_RUN_PATH=/usr/local/lib
+      - LD_LIBRARY_PATH=/usr/local/lib
       - TZ=America/Los_Angeles
