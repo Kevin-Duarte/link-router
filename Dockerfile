@@ -1,8 +1,6 @@
 FROM python:3
-ADD start.sh / 
-RUN sed -i -e 's/\r$//' start.sh; \
-chmod +x /start.sh; \
-pip install flask; \
+COPY code /
+RUN pip install flask; \
 pip install waitress; \
 pip install flask_login; \
 pip install flask_limiter; \

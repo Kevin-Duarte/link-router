@@ -3,7 +3,7 @@ services:
   web:
     container_name: linkrouter-webapp
     build: .
-    command: ["/start.sh"]
+    command: ["python", "./main.py"]
     volumes:
       - ./linkrouter_data:/link-router-files
     ports:

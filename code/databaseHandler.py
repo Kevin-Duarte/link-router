@@ -75,8 +75,8 @@ class databaseHandler:
         # create default credentials if there are none
 
         if self.getUserCount() <= 0:
-            self.addUser(email= DEFAULT_USERNAME,
-            password=DEFAULT_PASSWORD,
+            self.addUser(email= 'admin',
+            password='admin',
             firstName='admin',
             lastName='admin',
             accountActive=True,

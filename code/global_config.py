@@ -50,8 +50,8 @@ smtp = smtpHandler(
 
 app = Flask(__name__, template_folder='template')
 limiter = Limiter(
-    app,
-    key_func=get_remote_address,
+    get_remote_address,
+    app=app,
     default_limits=['4 per second']
 )
 
